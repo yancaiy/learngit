@@ -1,0 +1,53 @@
+# Directory
+/obj_alpsMP_ref_design_v1_sensor/
+/calterah/baremetal/obj_alpsMP_ref_design_v1_boot/
+/build/
+
+# Prerequisites
+*.d
+*.mkdir_done
+*.bin
+*.log
+*.s19
+*.props
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+*.a
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Executables
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# vscode temp files
+*.vscode/

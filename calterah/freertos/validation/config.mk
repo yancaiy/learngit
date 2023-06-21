@@ -1,0 +1,33 @@
+
+
+# Selected OS
+OS_SEL ?= freertos
+
+EXT_DEV_LIST ?= nor_flash
+
+#FLASH_TYPE ?= s25fls
+FLASH_TYPE ?=
+
+#EXT_DEV_LIST ?= nor_flash
+EXT_DEV_LIST ?=
+
+#FLASH_XIP ?= 1
+FLASH_XIP ?= 0
+
+I_CACHE_EN ?= 1
+D_CACHE_EN ?= 1
+
+
+TEST_UART_EN ?= 0
+TEST_GPIO_EN ?= 0
+TEST_XIP_EN ?= 0
+TEST_DEBUG_EN ?= 0
+TEST_SPI_EN ?= 0
+TEST_DMA_EN ?= 0
+TEST_I2C_EN ?= 0
+TEST_CAN_EN ?= 0
+TEST_TIMER_EN ?= 0
+TEST_ROM_EN ?= 0
+TEST_DCORE_EN ?= 0
+TEST_WDT_EN ?= 0
+TEST_BB_EN ?= 0

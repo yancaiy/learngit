@@ -1,0 +1,8 @@
+#ifndef ALPS_OTP_MMAP_H
+#define ALPS_OTP_MMAP_H
+
+#define OTP_MMAP_SEC_BASE   (REL_REGBASE_EFUSE + 0x0140)
+#define OTP_CHIP_VER        (REL_REGBASE_EFUSE + 0x00E4)
+
+
+#endif

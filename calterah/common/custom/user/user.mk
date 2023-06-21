@@ -1,0 +1,48 @@
+CALTERAH_USER_ROOT = $(CALTERAH_CUSTOM_ROOT)/user
+
+CALTERAH_USER_CSRCDIR = $(CALTERAH_USER_ROOT)
+CALTERAH_USER_ASMSRCDIR = $(CALTERAH_USER_ROOT)
+
+# find all the source files in the target directories
+CALTERAH_USER_CSRCS = $(call get_csrcs, $(CALTERAH_USER_CSRCDIR))
+CALTERAH_USER_ASMSRCS = $(call get_asmsrcs, $(CALTERAH_USER_ASMSRCDIR))
+
+# get object files
+CALTERAH_USER_COBJS = $(call get_relobjs, $(CALTERAH_USER_CSRCS))
+CALTERAH_USER_ASMOBJS = $(call get_relobjs, $(CALTERAH_USER_ASMSRCS))
+CALTERAH_USER_OBJS = $(CALTERAH_USER_COBJS) $(CALTERAH_USER_ASMOBJS)
+
+# get dependency files
+CALTERAH_USER_DEPS = $(call get_deps, $(CALTERAH_USER_OBJS))
+
+
+# genearte library
+CALTERAH_USER_LIB = $(OUT_DIR)/lib_calterah_user.a
+
+COMMON_COMPILE_PREREQUISITES += $(CALTERAH_USER_ROOT)/user.mk
+
+# library generation rule
+$(CALTERAH_USER_LIB): $(CALTERAH_USER_OBJS)
+	$(TRACE_ARCHIVE)
+	$(Q)$(AR) $(AR_OPT) $@ $(CALTERAH_USER_OBJS)
+
+# specific compile rules
+# user can add rules to compile this library
+# if not rules specified to this library, it will use default compiling rules
+.SECONDEXPANSION:
+$(CALTERAH_USER_COBJS): $(OUT_DIR)/%.o : %.c $$(COMMON_COMPILE_PREREQUISITES)
+	$(TRACE_COMPILE)
+	$(Q)$(CC) -c $(COMPILE_OPT) $< -o $@
+
+.SECONDEXPANSION:
+$(CALTERAH_USER_ASMOBJS): $(OUT_DIR)/%.o : %.s $$(COMMON_COMPILE_PREREQUISITES)
+	$(TRACE_COMPILE)
+	$(Q)$(CC) -c $(ASM_OPT) $< -o $@
+
+CALTERAH_COMMON_CSRC += $(CALTERAH_USER_CSRCS)
+CALTERAH_COMMON_ASMSRCS += $(CALTERAH_USER_ASMSRCS)
+
+CALTERAH_COMMON_COBJS += $(CALTERAH_USER_COBJS)
+CALTERAH_COMMON_ASMOBJS += $(CALTERAH_USER_ASMOBJS)
+
+CALTERAH_COMMON_LIBS += $(CALTERAH_USER_LIB)

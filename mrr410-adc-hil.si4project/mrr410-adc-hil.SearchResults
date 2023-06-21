@@ -1,0 +1,177 @@
+---- int_disable Matches (88 in 23 files) ----
+system_tick_init in alps_timer.c (embarc_osp\chip\alps\common) : 
+		int_disable(CHIP_SYS_TIMER_INTNO); /* disable first then enable */
+arc_exception.c (calterah\bootloader\baremetal\arc\arc) line 281 : 
+int32_t int_disable(const uint32_t intno)
+arc_exception.c (embarc_osp\arc) line 289 : 
+int32_t int_disable(const uint32_t intno)
+arc_exception.h (calterah\bootloader\baremetal\arc\inc\arc) line 510 : 
+extern int32_t int_disable(const uint32_t intno);
+arc_exception.h (embarc_osp\inc\arc) line 510 : 
+extern int32_t int_disable(const uint32_t intno);
+bb_interframe_command_handler in baseband_cli.c (calterah\common\baseband) : 
+                int_disable(INT_BB_SAM);
+dma_isr in dma_hal.c (embarc_osp\device\ip\ip_hal) : 
+			result = dma_ops->int_disable(dev_dma, INT_TFR);
+dma_err_isr in dma_hal.c (embarc_osp\device\ip\ip_hal) : 
+			result = dma_ops->int_disable(dev_dma, INT_ERR);
+dw_dmac.c (embarc_osp\device\ip\designware\ahb_dmac) line 448 : 
+	.int_disable = dw_dmac_int_disable_all,
+dw_ahb_dmac_operation in dw_dmac.h (embarc_osp\device\ip\designware\ahb_dmac) : 
+	int32_t (*int_disable)(dw_dmac_t *dmac, dw_dmac_inttype_t int_type);
+emu_rf_error_irq_cpu_19_isr in func_safety.c (calterah\common\fsm) : 
+        int_disable(INT_RF_ERROR_IRQ);
+emu_rf_error_ss1_cpu_20_isr in func_safety.c (calterah\common\fsm) : 
+        int_disable(INT_RF_ERROR_SS1);
+emu_digital_error_irq_cpu_21_isr in func_safety.c (calterah\common\fsm) : 
+        int_disable(INT_DG_ERROR_IRQ);
+emu_digital_error_ss1_cpu_22_isr in func_safety.c (calterah\common\fsm) : 
+        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                //         int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_IRQ);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                //         int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_RF_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+func_safety_sm_init in func_safety.c (calterah\common\fsm) : 
+                        int_disable(INT_DG_ERROR_SS1);
+safety_mechanism_power_on_check in func_safety.c (calterah\common\fsm) : 
+                int_disable(INT_RF_ERROR_IRQ);
+gpio_int_unregister in gpio_hal.c (embarc_osp\device\ip\ip_hal) : 
+			int_disable(dev_gpio_ptr->int_no + gpio_no);
+i2c_interrupt_disable in i2c_hal.c (embarc_osp\device\ip\ip_hal) : 
+		int_disable(i2c_dev->int_no);
+prvSetupTimerInterrupt in port.c (embarc_osp\os\freertos\portable\Synopsys\ARC) : 
+	int_disable(CHIP_OS_TIMER_INTNO); /* disable os timer interrupt */
+prvSetupTimerInterrupt in port.c (embarc_osp\os\freertos\portable\Synopsys\ARC_EM_SECURESHIELD) : 
+	int_disable(BOARD_OS_TIMER_INTNO); /* disable os timer interrupt */
+pwm_stop in pwm_hal.c (embarc_osp\device\ip\ip_hal) : 
+			result = int_disable(pwm_timer->int_no[id]);
+spi_interrupt_uninstall in spi_hal.c (embarc_osp\device\ip\ip_hal) : 
+		result = int_disable(int_id);
+stat_timer_init in statistic.c (calterah\common\statistic) : 
+        int_disable(STAT_TIMER_INTNO);
+system_tick_init in tick.c (calterah\bootloader\baremetal\boot) : 
+		int_disable(CHIP_SYS_TIMER_INTNO);
+dw_timer_stop in timer_hal.c (calterah\bootloader\baremetal\arc\device\ip\ip_hal) : 
+			result = int_disable(dw_timer->int_no[id]);
+dw_timer_stop in timer_hal.c (embarc_osp\device\ip\ip_hal) : 
+			result = int_disable(dw_timer->int_no[id]);
+case_uart_34 in tm01_uart.c (calterah\freertos\validation\cases\uart) : 
+	int_disable(dev_uart->int_no);//disable interrupt
+case_uart_6 in tm01_uart.c (calterah\freertos\validation\cases\uart) : 
+	int_disable(dev_uart->int_no);//disable interrupt
+case_uart_8 in tm01_uart.c (calterah\freertos\validation\cases\uart) : 
+	int_disable(dev_uart->int_no);//disable interrupt
+watchdog_init in watchdog.c (calterah\freertos\sensor) : 
+	int_disable(INT_WDG_TIMEOUT);
+watchdog_init in watchdog.c (calterah\freertos\validation) : 
+	int_disable(INT_WDG_TIMEOUT);

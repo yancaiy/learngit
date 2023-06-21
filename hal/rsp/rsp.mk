@@ -1,0 +1,48 @@
+CALTERAH_RSP_ROOT = $(CALTERAH_HAL_ROOT)/rsp
+
+CALTERAH_RSP_CSRCDIR = $(CALTERAH_RSP_ROOT)
+CALTERAH_RSP_ASMSRCDIR = $(CALTERAH_RSP_ROOT)
+
+# find all the source files in the target directories
+CALTERAH_RSP_CSRCS = $(call get_csrcs, $(CALTERAH_RSP_CSRCDIR))
+CALTERAH_RSP_ASMSRCS = $(call get_asmsrcs, $(CALTERAH_RSP_ASMSRCDIR))
+
+# get object files
+CALTERAH_RSP_COBJS = $(call get_relobjs, $(CALTERAH_RSP_CSRCS))
+CALTERAH_RSP_ASMOBJS = $(call get_relobjs, $(CALTERAH_RSP_ASMSRCS))
+CALTERAH_RSP_OBJS = $(CALTERAH_RSP_COBJS) $(CALTERAH_RSP_ASMOBJS)
+
+# get dependency files
+CALTERAH_RSP_DEPS = $(call get_deps, $(CALTERAH_RSP_OBJS))
+
+
+# genearte library
+CALTERAH_RSP_LIB = $(OUT_DIR)/lib_calterah_rsp.a
+
+COMMON_COMPILE_PREREQUISITES += $(CALTERAH_RSP_ROOT)/rsp.mk
+
+# library generation rule
+$(CALTERAH_RSP_LIB): $(CALTERAH_RSP_OBJS)
+	$(TRACE_ARCHIVE)
+	$(Q)$(AR) $(AR_OPT) $@ $(CALTERAH_RSP_OBJS)
+
+# specific compile rules
+# RSP can add rules to compile this library
+# if not rules specified to this library, it will use default compiling rules
+.SECONDEXPANSION:
+$(CALTERAH_RSP_COBJS): $(OUT_DIR)/%.o : %.c $$(COMMON_COMPILE_PREREQUISITES)
+	$(TRACE_COMPILE)
+	$(Q)$(CC) -c $(COMPILE_OPT) $< -o $@
+
+.SECONDEXPANSION:
+$(CALTERAH_RSP_ASMOBJS): $(OUT_DIR)/%.o : %.s $$(COMMON_COMPILE_PREREQUISITES)
+	$(TRACE_COMPILE)
+	$(Q)$(CC) -c $(ASM_OPT) $< -o $@
+
+CALTERAH_COMMON_CSRC += $(CALTERAH_RSP_CSRCS)
+CALTERAH_COMMON_ASMSRCS += $(CALTERAH_RSP_ASMSRCS)
+
+CALTERAH_COMMON_COBJS += $(CALTERAH_RSP_COBJS)
+CALTERAH_COMMON_ASMOBJS += $(CALTERAH_RSP_ASMOBJS)
+
+CALTERAH_COMMON_LIBS += $(CALTERAH_RSP_LIB)
